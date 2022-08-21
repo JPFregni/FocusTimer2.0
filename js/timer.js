@@ -1,4 +1,12 @@
-import { secondsDisplay, minutesDisplay } from './elements.js'
+import {
+  secondsDisplay,
+  minutesDisplay,
+  buttonPlay,
+  buttonPause
+} from './elements.js'
+
+import Sounds from './sounds.js'
+const sounds = Sounds()
 
 export default function Timer() {
   let timerTimeOut
@@ -28,7 +36,7 @@ export default function Timer() {
         reset()
         buttonPlay.classList.remove('hide')
         buttonPause.classList.add('hide')
-        timeEnd()
+        sounds.timeEnd()
         return
       }
 
